@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>랜덤 카드</title>
+    <style>
+        .card {
+            width: 394px;
+            height: 844px;
+            border: 1px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            margin: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="card" class="card">카드</div>
+
+    <script>
+        const card = document.getElementById("card");
+        const letters = ["요즘 나의 플레이리스트는? (나의 인생 노래가 있다면 ?) ", 
+                        "내가 가장 좋아하지 않는 음식은? (이유)",
+                        "나의 여행 스타일은? (혼자 여행을 떠나본 적이 있나요?)",
+                        "하나님을 생각하면 떠오르는 이미지는?",
+                        "꼭 추전하고 싶은 맛집이 있다면?",
+                        "내가 10대 때 즐기던 취미는?",
+                        "최근에 가장 감사했던 일은?",
+                        "내 인생에서 가장 행복했던 날은? (가장 힘들었던 순간은?)",
+                        "교회에서 가장 재밌었던 일은?",
+                        "지금도 이불킥하게 되는 나의 실수는?",
+                        "가족 중 가장 많은 시간을 보내는 사람은?",
+                        "내 삶의 목표(비전)는? (지금 내가 하고 있는 노력은 ?)",
+                        "나의 신앙의 롤모델은? (성경인물, 주변사람 등)",
+                        "요즘 가장 많이 생각하는 것이 있다면?",
+                        "요즘 내 삶의 만족도를 점수로 표현한다면?",
+                        "학창 시절에 내가 가장 좋아했던 과목은? (앞으로 공부해보고 싶은 분야가 있다면?) "]; // 사용할 글자 목록
+        let remainingLetters = [...letters]; // 남은 글자들
+
+        card.addEventListener("click", () => {
+            if (remainingLetters.length === 0) {
+                card.innerText = "끝!";
+                return;
+            }
+
+            const randomIndex = Math.floor(Math.random() * remainingLetters.length);
+            const selectedLetter = remainingLetters[randomIndex];
+            card.innerText = selectedLetter;
+
+            // 선택된 글자를 목록에서 제거
+            remainingLetters.splice(randomIndex, 1);
+        });
+    </script>
+
+</body>
+</html>
