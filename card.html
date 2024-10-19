@@ -5,10 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>랜덤 카드</title>
     <style>
+        body {
+            margin: 0; /* 좌측을 포함한 모든 여백 제거 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
         .card {
             width: 360px;
             height: 640px;
-            border: 1px solid black;
+            border: 1px solid rgb(255, 255, 255);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -17,7 +24,7 @@
             cursor: pointer;
             text-align: center;
             background-color:#399271;
-            color: white;
+            color: white;          
         }
     </style>
 </head>
